@@ -1,0 +1,66 @@
+:root {
+    --primary-color: #E3FDFD;
+    --second-primary-color: #CBF1F5;
+    --third-primary-color: #A6E3E9;
+    --fourth-primary-color: #71C9CE;
+    --primary-transparent-color: #e3fdfd84;
+    --primary-text-color: #7c7c7c;
+    --link-highlight-color: #4b4b4b;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Open Sans, sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: var(--link-highlight-color);
+}
+
+.intro-container {
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.main-header {
+    position: fixed;
+    top: 1rem;
+    z-index: 1;
+    width: 100%;
+    background-color: var(--primary-transparent-color);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+}
+
+.navbar-links-container {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    color: var(--primary-text-color);
+    font-size: 1.25rem;
+}

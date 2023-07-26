@@ -1,1 +1,1 @@
-I created my personal website.
+Welcome to my portfolio site.
