@@ -1,96 +1,195 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Jay Prakash Sharma</title>
-  </head>
-  <body>
-    <table cellspacing="20px">
-      <tr>
-        <td><img width="150px" height="150px" src="Images/jay.png" style="border-radius:100%;" alt="my_profile_photo"></td>
-        <td>
-          <h1>Jay Prakash Sharma</h1>
-          <p>A <strong>Computer Science</strong> undergrad</p>
-          <p><em>Software developer and ❤ to make creative projects</em>.</p>
-        </td>
-      </tr>
-    </table>
-    <hr>
-    <h3>Education</h3>
-    <table cellspacing="10px">
-      <th>Date</th>
-      <th>Course</th>
-      <tr>
-        <td>Aug, 2021 - June, 2025</td>
-        <td>B.Tech in Computer Science and Engineering</td>
-      </tr>
-      <tr>
-        <td>June, 2018 - April, 2020</td>
-        <td>High School with Science as core subjects.</td>
-      </tr>
-    </table>
-    <hr>
-    <h3>Projects</h3>
-    <ol>
-      <li><a href="https://github.com/Jay9874/student_monitoring">Student Monitoring sytem  </a> - uses <strong>ML</strong> algorithms to predicts student's performance.</li>
-      <li><a target="_blank" href="https://github.com/Jay9874/keeper_app">Google Keep clone</a> - used <strong>React</strong>, <strong>Express</strong> and <strong>MongoDB</strong> to make a clone of Google Keep, the note keeping app.<a href="https://keeper-zx0e.onrender.com/">View live</a></li>
-      <li><a href="https://github.com/Jay9874/Daily_blog">Daily Journal</a> - used <strong>Express, NodeJs, MongoDB</strong> to make a simple journal sharing app.<a href="https://dailyjournal.up.railway.app/">View live</a></li>
-    </ol>
-    <hr>
-    <h3>Programming Languages</h3>
-    <table>
-      <tr>
-        <td>
-          <table>
-            <tr>
-              <td>C</td>
-            
-            </tr>
-            <tr>
-              <td>C++</td>
-            
-            </tr>
-            <tr>
-              <td>Python</td>
-            
-            </tr>
-          </table>
-        </td>
-        <td>
-        <table>
-       
-           
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+        rel="stylesheet">
+    <!-- icon -->
+    <link rel="icon" href="Images/favicon_io (14)/favicon.ico">
+    <!-- Custom Style -->
+    <link href="style.css" rel="stylesheet">
+</head>
 
-       
-          <tr>
-            <td>JavaScript</td>
-          
-          </tr>
+<body>
+    <div id="main-header" class="main-header">
+        <div class="navbar-container">
+            <div class="navbar-name-container">
+                <span class="navbar-name hidden">Jay Prakash Sharma</span>
+            </div>
+            <div class="navbar-links-container">
+                <a class="link-about active" href="#intro"> About me</a>
+                <a class="link-education" href="#education">Education</a>
+                <a class="link-projects" href="#projects">Projects</a>
+                <a class="link-skills" href="#skills">Skills</a>
+                <a class="link-connect" href="#connect">Connect</a>
+            </div>
+        </div>
+    </div>
+    <div class="img-container animate">
+        <img class="my-img" src="Images/jay.png" alt="my_profile_photo">
+    </div>
+    <section id="intro" class="intro-section">
+        <div class="intro-container">
+
+            <div class="intro-text-container">
+                <h1>Jay Prakash Sharma</h1>
+                <p>A <strong>Computer Science</strong> undergrad</p>
+                <p><em>Software developer and ❤ to make impactful projects</em>.</p>
+            </div>
+    </section>
+    <section id="education" class="education-section">
+        <div class="education-header">
+            <h3>Education</h3>
+            <p>My academic journey so far</p>
+        </div>
+        <div class="education-card-container section-card-container">
+            <div class="education-card section-card">
+                <h4>B.Tech in Computer Science and Engineering</h4>
+                <p>Aug, 2021 - June, 2025</p>
+                <p>Bengal Institute of Information Technology, Kolkata</p>
+            </div>
+            <div class="education-card section-card">
+                <h4>High School</h4>
+                <p>June, 2018 - April, 2020</p>
+                <p>M.G. Rungta Academy, Kolkata</p>
+            </div>
+            <div class="education-card section-card">
+                <h4>Primary School</h4>
+                <p>Jan, 2007 - April, 2018</p>
+                <p>Dakshin Calcutta Arya Vidyalaya, Kolkata</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="project-section">
+        <div class="project-header section-header">
+            <h3>Projects</h3>
+            <p>My projects so far</p>
+        </div>
+        <div class="project-card-container section-card-container">
+            <div class="project-card section-card">
+                <h4>JF Interio</h4>
+                <p>A commercial web app for Furniture Manufacturing Firm bringing Sell, Catalogue and review online.</p>
+                <div class="project-links">
+                    <a href="https://jfinterio.vercel.app" target="_blank">
+                        <ion-icon name="link-outline"></ion-icon>
+                    </a>
+                    <a href="https://github.com/Jay9874/jf_interio" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="project-card section-card">
+                <h4>All Project</h4>
+                <p>Works as centralized platform to store all the projects by students across the country through AICTE.
+                </p>
+                <div class="project-links">
+                    <a href="https://allprojects.cyclic.app/" target="_blank">
+                        <ion-icon name="link-outline"></ion-icon>
+                    </a>
+                    <a href="https://github.com/Jay9874/All_Projects-DIVERSION2k23" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="project-card section-card">
+                <h4>deChat</h4>
+                <p>A decentralized messaging app for secure and content protected conversation.</p>
+                <div class="project-links">
+                    <a href="https://dechats.vercel.app/" target="_blank">
+                        <ion-icon name="link-outline"></ion-icon>
+                    </a>
+                    <a href="https://github.com/Jay9874/deChat" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="project-card section-card">
+                <h4>Student Monitoring System</h4>
+                <p>A web app uses ML algorithm to predict performance of student based on marks uploaded by professors or teachers.</p>
+                <div class="project-links">
+                    <a href="https://dechats.vercel.app/" target="_blank">
+                        <ion-icon name="link-outline"></ion-icon>
+                    </a>
+                    <a href="https://github.com/Jay9874/deChat" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="skills-section">
+        <div class="project-header section-header">
+            <h3>Programming Languages</h3>
+            <p>I use to speak with computers</p>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>C</td>
+                            <td>⭐️⭐️⭐️⭐️⭐️</td>
+                        </tr>
+                        <tr>
+                            <td>C++</td>
+                            <td>⭐️⭐️⭐️⭐️⭐️</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>⭐️⭐️⭐️⭐️</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Java</td>
+                            <td>⭐️⭐️</td>
+                        </tr>
+                        <tr>
+                            <td>Kotlin</td>
+                            <td>⭐️⭐️</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>⭐️⭐️⭐️</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
         </table>
-        </td>
-      </tr>
-    </table>
-    <hr>
-    <h3>Skills</h3>
-    <ul>
-      <li>React</li>
-      <li>Blockchain</li>
-      <li>MangoDB</li>
-      <li>Express js</li>
-      <li>Nodejs</li>
-      <li>Django</li>
-      <li>Git, Github</li>
-      <li>Competative Programming</li>
-    </ul>
-    <hr>
-    <h3>My Profiles</h3>
-    <ul>
-      <li>Leetcode- <a href="https://leetcode.com/Jay9874/">Jay9874</a></li>
-      <li>Codeforces- <a href="https://codeforces.com/profile/Jay9874">Jay9874</a></li>
-      <li>Codechef- <a href="https://www.codechef.com/users/jay9874">Jay9874</a></li>
-      <li>Github- <a href="https://github.com/Jay9874">Jay9874</a></li>
-    </ul>
-    <hr>
-    <a href="contact_me.html">Contact me</a>
-  </body>
+        <hr>
+        <h3>Skills</h3>
+        <ul>
+            <li>React</li>
+            <li>Flutter</li>
+            <li>Flask</li>
+            <li>MangoDB</li>
+            <li>Node.js</li>
+            <li>Django</li>
+            <li>Git, Github</li>
+        </ul>
+        <hr>
+    </section>
+    <section id="connect" class="connect-section">
+        <h3>My Profiles</h3>
+        <ul>
+            <li>Leetcode- <a href="https://leetcode.com/Jay9874/">Jay9874</a></li>
+            <li>Codeforces- <a href="https://codeforces.com/profile/Jay9874">Jay9874</a></li>
+            <li>Codechef- <a href="https://www.codechef.com/users/jay9874">Jay9874</a></li>
+            <li>Github- <a href="https://github.com/Jay9874">Jay9874</a></li>
+        </ul>
+        <hr>
+        <a href="contact_me.html">Contact me</a>
+    </section>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
 </html>
