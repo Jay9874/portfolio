@@ -21,6 +21,7 @@ html::-webkit-scrollbar{
     display: none;
 }
 body {
+    min-height: 100vh;
     -webkit-tap-highlight-color: transparent;
     font-family: Open Sans, sans-serif;
 }
@@ -46,13 +47,13 @@ a.active {
     z-index: 1;
     width: 100%;
     background-color: var(--primary-transparent-color);
-    /* background-color: transparent; */
     backdrop-filter: blur(15px);
-    border-radius: 1rem;
+    border-radius: 1rem; 
 }
 .navbar-container{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
 }
 .navbar-name.hidden{
@@ -62,10 +63,8 @@ a.active {
 .navbar-links-container {
     padding: 2rem 2rem;
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
-    justify-content: flex-end;
-    align-items: center;
+    flex-wrap: wrap;
     margin: 0;
     color: var(--primary-text-color);
     font-size: 1.25rem;
@@ -75,33 +74,36 @@ a.active {
     height: 100vh;
     background-color: var(--primary-color);
     width: 100%;
+    padding-top: calc(1rem + 91.5px);
 }
 
 .intro-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
 .img-container {
-    position: fixed;
-    left: calc(50vw - 200px);
-    top: calc(50vh - 180px);
     width: 200px;
     height: 200px;
+    display: flex;
+    justify-content: center;
     z-index: 2;
 }
 
 .img-container img {
-    height: 100%;
-    width: 100%;
-    transform: rotate(-10deg);
+    position: fixed;
+    /* top: 40vh; */
+    height: 200px;
+    width: 200px;
     border-radius: 100%;
 }
 
-.img-container.animate {
+.my-img.animate {
     /* make sure it stays put so we can see it! */
     animation: move 1s linear;
     animation-fill-mode: both;
@@ -111,18 +113,20 @@ a.active {
 
 @keyframes move {
     0% {
+        left: calc(50% - 100px);
+        top: 35%;
         transform: scale(1);
     }
 
     100% {
         left: 0;
-        top: -38px;
+        top: -40px;
         transform: scale(.40);
     }
 }
 
 .intro-text-container {
-    padding-top: 10rem;
+    text-align: center;
 }
 
 
