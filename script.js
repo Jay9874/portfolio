@@ -30,3 +30,7 @@ function doAnimatin () {
     )
   })
 }
+
+// Media query for navbar
+const mediaQuery = window.matchMedia('(max-width: 768px)')
+const navbar = document.querySelector('.navbar-links-container')

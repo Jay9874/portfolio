@@ -14,12 +14,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
-html::-webkit-scrollbar{
+
+html::-webkit-scrollbar {
     display: none;
 }
+
 body {
     min-height: 100vh;
     -webkit-tap-highlight-color: transparent;
@@ -41,6 +44,8 @@ a.active {
     transition: .25s ease-out;
 }
 
+/* ******************************** Header and Navbar section */
+
 .main-header {
     position: fixed;
     top: 1rem;
@@ -48,16 +53,22 @@ a.active {
     width: 100%;
     background-color: var(--primary-transparent-color);
     backdrop-filter: blur(15px);
-    border-radius: 1rem; 
+    border-radius: 1rem;
 }
-.navbar-container{
+
+.navbar-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
 }
-.navbar-name.hidden{
+
+.navbar-name.hidden {
     display: none;
+}
+
+.navbar-name-container {
+    min-height: 91.5px;
 }
 
 .navbar-links-container {
@@ -68,6 +79,19 @@ a.active {
     margin: 0;
     color: var(--primary-text-color);
     font-size: 1.25rem;
+}
+
+.navbar-arrow-container {
+    display: none;
+}
+
+.navbar-arrow {
+    background-color: var(--fourth-primary-color);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .25rem;
 }
 
 .intro-section {
@@ -132,10 +156,11 @@ a.active {
 
 /* education section */
 
-.education-section{
+.education-section {
     background-color: var(--second-primary-color);
 }
-.section-card-container{
+
+.section-card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,10 +170,12 @@ a.active {
     overflow: scroll;
     padding: 3rem 0;
 }
-.section-card-container::-webkit-scrollbar{
+
+.section-card-container::-webkit-scrollbar {
     display: none;
 }
-.section-card{
+
+.section-card {
     height: 400px;
     width: 250px;
     border: 1px solid var(--link-highlight-color);
@@ -156,14 +183,41 @@ a.active {
     padding: 1rem;
 }
 
-.project-section{
+.project-section {
     background-color: var(--third-primary-color);
 }
 
-.skills-section{
+.skills-section {
     background-color: var(--fourth-primary-color);
 }
 
-.connect-section{
+.connect-section {
     background-color: var(--fifth-primary-color);
+}
+
+
+@media screen and (max-width: 850px) {
+    .navbar-links-container {
+        display: none;
+    }
+
+    .navbar-arrow-container {
+        display: block;
+        padding: 0 1rem;
+    }
+
+    @keyframes move {
+        0% {
+            left: calc(50% - 100px);
+            top: 35%;
+            transform: scale(1);
+        }
+
+        100% {
+            left: -40px;
+            top: -40px;
+            transform: scale(.40);
+        }
+    }
+
 }
