@@ -26,7 +26,7 @@ function doAnimatin () {
     }
     document.body.style.setProperty(
       '--scroll',
-      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+      window.scrollY / (document.body.offsetHeight - window.innerHeight)
     )
   })
 }
@@ -34,3 +34,16 @@ function doAnimatin () {
 // Media query for navbar
 const mediaQuery = window.matchMedia('(max-width: 768px)')
 const navbar = document.querySelector('.navbar-links-container')
+
+// Navbar toggle
+const navbarToggle = document.querySelector('.navbar-arrow')
+const navbarContainer = document.querySelector('.navbar-mobile-menu')
+const navbarTopBar = document.querySelector("#arrow-top-bar")
+const navbarBottomBar = document.querySelector("#arrow-bottom-bar")
+
+navbarToggle.addEventListener('click', () => {
+  navbarTopBar.classList.toggle('active')
+  navbarBottomBar.classList.toggle('active')
+  navbarToggle.classList.toggle('active')
+  navbarContainer.classList.toggle('active')
+})

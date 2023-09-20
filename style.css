@@ -7,12 +7,16 @@
     --primary-transparent-color: #a0c49db9;
     --primary-text-color: #7c7c7c;
     --link-highlight-color: #3c3c3c;
+    --bar-height: 3px;
+    --bar-width: 17px;
+    --bar-border-radius: 1.5px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -44,7 +48,7 @@ a.active {
     transition: .25s ease-out;
 }
 
-/* ******************************** Header and Navbar section */
+/* ******************************** Header and Navbar section **************************/
 
 .main-header {
     position: fixed;
@@ -89,10 +93,133 @@ a.active {
     background-color: var(--fourth-primary-color);
     border-radius: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: .25rem;
+    /* padding: .25rem; */
+    height: 40px;
+    width: 40px;
 }
+
+.arrow-top-bar-container,
+.arrow-bottom-bar-container {
+    position: relative;
+    /* height: calc((var(--bar-width)/1.4142 + var(--bar-height)/1.4142)); */
+    height: 20px;
+    width: calc((var(--bar-width)/1.4142 + var(--bar-height)/1.4142) - var(--bar-border-radius)*0.824);
+    /* background-color: rgba(0, 128, 0, 0.559); */
+}
+
+#arrow-top-bar,
+#arrow-bottom-bar {
+    position: absolute;
+    left: calc(var(--bar-height)*0.3536 + var(--bar-width)*(-0.1464) - var(--bar-border-radius)*0.414);
+    height: var(--bar-height);
+    width: var(--bar-width);
+    border-radius: var(--bar-border-radius);
+    background-color: rgba(255, 0, 0, 0.395);
+}
+
+#arrow-top-bar {
+    transform: rotate(45deg);
+    bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+}
+
+#arrow-bottom-bar {
+    transform: rotate(-45deg);
+    top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+}
+
+/********************** The arrow animation ******************** */
+#arrow-bottom-bar.active {
+    animation-duration: 400ms;
+    animation-name: bottomturn;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes bottomturn {
+    0% {
+        top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+        transform: rotate(-45deg);
+    }
+
+    70% {
+        top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - .45px);
+        transform: rotate(-60deg);
+
+    }
+
+    80% {
+        top: calc(var(--bar-width)/2 - 2.9px);
+        transform: rotate(-90deg);
+
+    }
+
+    100% {
+        top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+        transform: rotate(-135deg);
+    }
+}
+
+#arrow-top-bar.active {
+    animation-duration: 400ms;
+    animation-name: topturn;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@keyframes topturn {
+    0% {
+        bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+        transform: rotate(45deg);
+    }
+
+    70% {
+        bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - .45px);
+        transform: rotate(60deg);
+    }
+
+    80% {
+        bottom: calc(var(--bar-width)/2 - 2.9px);
+        transform: rotate(90deg);
+
+    }
+
+    100% {
+        bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+        transform: rotate(135deg);
+    }
+}
+
+
+
+.navbar-mobile-menu.active {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    z-index: 3;
+    border-radius: 1rem;
+    margin: calc(91.5px + 1.5rem) 0.5rem 0 0;
+    padding: 2rem;
+    background-color: #fefae0a6;
+    backdrop-filter: blur(20px);
+}
+
+.navbar-mobile-menu {
+    display: none;
+}
+
+.navlink {
+    padding: .5rem 2rem;
+}
+
+
+/************************************** INTRO SECTION **************************** */
 
 .intro-section {
     height: 100vh;
@@ -195,7 +322,7 @@ a.active {
     background-color: var(--fifth-primary-color);
 }
 
-
+/**************************************** MEDIA QUERIES ******************************* */
 @media screen and (max-width: 850px) {
     .navbar-links-container {
         display: none;
@@ -204,6 +331,7 @@ a.active {
     .navbar-arrow-container {
         display: block;
         padding: 0 1rem;
+        position: relative;
     }
 
     @keyframes move {
@@ -219,5 +347,10 @@ a.active {
             transform: scale(.40);
         }
     }
+}
 
+@media screen and (min-width:851px) {
+    .navbar-mobile-menu {
+        display: none;
+    }
 }
