@@ -48,6 +48,54 @@ a.active {
     transition: .25s ease-out;
 }
 
+.body-overlay.active {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+    animation-duration: 400ms;
+    animation-name: blur_animation-in;
+    animation-fill-mode: forwards;
+
+    /* backdrop-filter: blur(7px); */
+}
+
+.body-overlay.hidden {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+    animation-duration: 400ms;
+    animation-name: blur_animation-out;
+    animation-fill-mode: forwards;
+
+    /* backdrop-filter: blur(7px); */
+}
+
+@keyframes blur_animation-in {
+    0% {
+        background-color: #2c2c2c00;
+        backdrop-filter: blur(0px);
+    }
+
+    100% {
+        background-color: #2c2c2c8f;
+        backdrop-filter: blur(7px);
+    }
+}
+
+@keyframes blur_animation-out {
+    0% {
+        background-color: #2c2c2c8f;
+        backdrop-filter: blur(7px);
+    }
+
+    100% {
+        background-color: #2c2c2c00;
+        backdrop-filter: blur(0px);
+    }
+}
+
 /* ******************************** Header and Navbar section **************************/
 
 .main-header {
@@ -135,6 +183,7 @@ a.active {
     animation-duration: 400ms;
     animation-name: bottomturn;
     animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 
@@ -163,11 +212,34 @@ a.active {
     }
 }
 
+@keyframes bottomturnrev {
+    0% {
+        top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+        transform: rotate(-135deg);
+
+    }
+
+    70% {
+        top: calc(var(--bar-width)/2 - 2.9px);
+        transform: rotate(-90deg);
+    }
+
+    80% {
+        top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - .45px);
+        transform: rotate(-60deg);
+    }
+
+    100% {
+        top: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+        transform: rotate(-45deg);
+    }
+}
+
 #arrow-top-bar.active {
     animation-duration: 400ms;
     animation-name: topturn;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-timing-function: ease;
 }
 
 @keyframes topturn {
@@ -193,25 +265,94 @@ a.active {
     }
 }
 
+@keyframes topturnrev {
+    0% {
+        bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+        transform: rotate(135deg);
+
+    }
+
+    70% {
+        bottom: calc(var(--bar-width)/2 - 2.9px);
+        transform: rotate(90deg);
+
+    }
+
+    80% {
+        bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - .45px);
+        transform: rotate(60deg);
+
+    }
+
+    100% {
+        bottom: calc(var(--bar-width)*0.3536 - var(--bar-height)*0.3536 - 1.45px);
+        transform: rotate(45deg);
+    }
+}
+
+#arrow-top-bar.normal {
+    animation-duration: 400ms;
+    animation-name: topturnrev;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+#arrow-bottom-bar.normal {
+    animation-duration: 400ms;
+    animation-name: bottomturnrev;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
 
 
-.navbar-mobile-menu.active {
+
+.navbar-mobile-menu {
     position: fixed;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    right: 0;
     z-index: 3;
     border-radius: 1rem;
     margin: calc(91.5px + 1.5rem) 0.5rem 0 0;
     padding: 2rem;
     background-color: #fefae0a6;
     backdrop-filter: blur(20px);
+
 }
 
-.navbar-mobile-menu {
-    display: none;
+.navbar-mobile-menu.active {
+    right: 0;
+    animation: slide-in;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+}
+
+.navbar-mobile-menu.hidden {
+    right: calc(-72px - 138.234px);
+    animation: slide-out;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        right: calc(-72px - 138.234px);
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: calc(-72px - 138.234px);
+    }
 }
 
 .navlink {
@@ -350,7 +491,10 @@ a.active {
 }
 
 @media screen and (min-width:851px) {
-    .navbar-mobile-menu {
+
+    .navbar-mobile-menu,
+    .navbar-mobile-menu.active,
+    .navbar-mobile-menu.hidden {
         display: none;
     }
 }
