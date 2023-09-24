@@ -89,8 +89,5 @@ window.onresize = () => {
       navbarContainer.classList.remove("active");
       navbarContainer.classList.add("hidden");
     }
-  } else {
-    overlay.style.display = "block";
-    navbarContainer.style.display = "flex";
   }
 };

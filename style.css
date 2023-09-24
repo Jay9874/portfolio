@@ -7,6 +7,8 @@
     --primary-transparent-color: #a0c49db9;
     --primary-text-color: #7c7c7c;
     --link-highlight-color: #3c3c3c;
+    --overlay-bg-start: #aaaaaa00;
+    --overlay-bg-end: #6363638f;
     --bar-height: 3px;
     --bar-width: 17px;
     --bar-border-radius: 1.5px;
@@ -55,6 +57,7 @@ a.active {
     z-index: 1;
     animation-duration: 400ms;
     animation-name: blur_animation-in;
+    animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
 
     /* backdrop-filter: blur(7px); */
@@ -67,6 +70,7 @@ a.active {
     z-index: 1;
     animation-duration: 400ms;
     animation-name: blur_animation-out;
+    animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
 
     /* backdrop-filter: blur(7px); */
@@ -74,24 +78,24 @@ a.active {
 
 @keyframes blur_animation-in {
     0% {
-        background-color: #2c2c2c00;
+        background-color: var(--overlay-bg-start);
         backdrop-filter: blur(0px);
     }
 
     100% {
-        background-color: #2c2c2c8f;
-        backdrop-filter: blur(7px);
+        background-color: var(--overlay-bg-end);
+        backdrop-filter: blur(4px);
     }
 }
 
 @keyframes blur_animation-out {
     0% {
-        background-color: #2c2c2c8f;
-        backdrop-filter: blur(7px);
+        background-color: var(--overlay-bg-end);
+        backdrop-filter: blur(4px);
     }
 
     100% {
-        background-color: #2c2c2c00;
+        background-color: var(--overlay-bg-start);
         backdrop-filter: blur(0px);
     }
 }
