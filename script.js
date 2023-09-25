@@ -3,9 +3,30 @@ const navLinks = document.querySelectorAll(".navbar-links-container a");
 const sections = document.querySelectorAll("body section");
 const aboutSection = document.querySelector(".intro-section");
 const navbarName = document.querySelector(".navbar-name");
+// Media query for navbar
+const navbar = document.querySelector(".navbar-links-container");
+// Navbar toggle
+const navbarToggle = document.querySelector(".navbar-arrow");
+const navbarContainer = document.querySelector(".navbar-mobile-menu");
+const arrowBar = document.querySelectorAll(".arrow-bar");
+const overlay = document.querySelector("#body-overlay");
+const mobileLink = document.querySelector(".mobile-links");
 
 window.onscroll = () => {
   doAnimatin();
+  hideMobileMenu(navbarContainer);
+  if (navbarToggle.classList.contains("active")) {
+    arrowAnimation(arrowBar);
+  }
+};
+
+window.onresize = () => {
+  if (window.innerWidth > 850) {
+    hideMobileMenu(navbarContainer);
+    if (navbarToggle.classList.contains("active")) {
+      arrowAnimation(arrowBar);
+    }
+  }
 };
 
 function doAnimatin() {
@@ -31,17 +52,23 @@ function doAnimatin() {
   });
 }
 
-// Media query for navbar
-const navbar = document.querySelector(".navbar-links-container");
-// Navbar toggle
-const navbarToggle = document.querySelector(".navbar-arrow");
-const navbarContainer = document.querySelector(".navbar-mobile-menu");
-const arrowBar = document.querySelectorAll(".arrow-bar");
-const overlay = document.querySelector("#body-overlay");
-
-navbarToggle.addEventListener("click", () => {
+// for activate navbar links on click
+function hideMobileMenu(element) {
+  if (element.classList.contains("active")) {
+    element.classList.remove("active");
+    element.classList.add("hidden");
+    setTimeout(() => {
+      element.style.display = "none";
+    }, 400);
+  }
+  if (overlay.classList.contains("active")) {
+    overlay.classList.remove("active");
+    overlay.classList.add("hidden");
+  }
+}
+function arrowAnimation(arrows) {
   // functions for bars
-  arrowBar.forEach((bar) => {
+  arrows.forEach((bar) => {
     if (bar.classList.contains("active")) {
       bar.classList.remove("active");
       bar.classList.add("normal");
@@ -52,6 +79,22 @@ navbarToggle.addEventListener("click", () => {
       bar.classList.add("active");
     }
   });
+  navbarToggle.classList.toggle("active");
+}
+//while navlink active clicked outside
+document.addEventListener("click", (e) => {
+  if (
+    !mobileLink.contains(e.target) &&
+    !navbarToggle.contains(e.target) &&
+    navbarToggle.classList.contains("active")
+  ) {
+    hideMobileMenu(navbarContainer);
+    arrowAnimation(arrowBar);
+  }
+});
+
+navbarToggle.addEventListener("click", () => {
+  arrowAnimation(arrowBar);
   //functions for mobile-menu
   if (navbarContainer.classList.contains("active")) {
     navbarContainer.classList.remove("active");
@@ -63,10 +106,10 @@ navbarToggle.addEventListener("click", () => {
     if (navbarContainer.classList.contains("hidden")) {
       navbarContainer.classList.remove("hidden");
     }
-    navbarContainer.style.display = "flex";
+    navbarContainer.style.display = "block";
     navbarContainer.classList.add("active");
   }
-  navbarToggle.classList.toggle("active");
+
   // functions for overlay
   if (overlay.classList.contains("active")) {
     overlay.classList.remove("active");
@@ -78,16 +121,3 @@ navbarToggle.addEventListener("click", () => {
     overlay.classList.add("active");
   }
 });
-
-window.onresize = () => {
-  if (window.innerWidth > 850) {
-    if (overlay.classList.contains("active")) {
-      overlay.classList.remove("active");
-      overlay.classList.add("hidden");
-    }
-    if (navbarContainer.classList.contains("active")) {
-      navbarContainer.classList.remove("active");
-      navbarContainer.classList.add("hidden");
-    }
-  }
-};
