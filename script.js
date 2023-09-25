@@ -59,7 +59,7 @@ function hideMobileMenu(element) {
     element.classList.add("hidden");
     setTimeout(() => {
       element.style.display = "none";
-    }, 400);
+    },100);
   }
   if (overlay.classList.contains("active")) {
     overlay.classList.remove("active");
@@ -101,7 +101,7 @@ navbarToggle.addEventListener("click", () => {
     navbarContainer.classList.add("hidden");
     setTimeout(() => {
       navbarContainer.style.display = "none";
-    }, 400);
+    },100);
   } else {
     if (navbarContainer.classList.contains("hidden")) {
       navbarContainer.classList.remove("hidden");
