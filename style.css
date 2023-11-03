@@ -47,7 +47,14 @@ a.active {
     color: var(--link-highlight-color);
     transition: .25s ease-out;
 }
-
+/************************************** Global css */
+.section-header{
+    text-align: center;
+    padding: 1rem 0;
+}
+section:not(:first-child){
+    padding: 1rem 0;
+}
 /* ******************************** Header and Navbar section **************************/
 
 .main-header {
@@ -295,7 +302,7 @@ a.active {
     flex-wrap: nowrap;
     height: 300px;
     overflow: scroll;
-    padding: 3rem 0;
+    padding: 1rem 0;
 }
 
 .section-card-container::-webkit-scrollbar {
