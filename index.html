@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <div id="body-overlay" class="body-overlay"></div>
     <div id="main-header" class="main-header">
         <div class="navbar-container">
             <div class="navbar-name-container">
@@ -32,10 +33,10 @@
             <div class="navbar-arrow-container">
                 <div class="navbar-arrow">
                     <div class="arrow-top-bar-container">
-                        <div id="arrow-top-bar"></div>
+                        <div id="arrow-top-bar" class="arrow-bar"></div>
                     </div>
                     <div class="arrow-bottom-bar-container">
-                        <div id="arrow-bottom-bar"></div>
+                        <div id="arrow-bottom-bar" class="arrow-bar"></div>
                     </div>
                 </div>
             </div>
@@ -43,11 +44,13 @@
     </div>
 
     <div class="navbar-mobile-menu">
-        <a class="navlink link-about active" href="#intro"> About me</a>
-        <a class="navlink link-education" href="#education">Education</a>
-        <a class="navlink link-projects" href="#projects">Projects</a>
-        <a class="navlink link-skills" href="#skills">Skills</a>
-        <a class="navlink link-connect" href="#connect">Connect</a>
+        <div class="mobile-links">
+            <a class="navlink link-about active" href="#intro"> About me</a>
+            <a class="navlink link-education" href="#education">Education</a>
+            <a class="navlink link-projects" href="#projects">Projects</a>
+            <a class="navlink link-skills" href="#skills">Skills</a>
+            <a class="navlink link-connect" href="#connect">Connect</a>
+        </div>
     </div>
 
     <section id="intro" class="intro-section">
@@ -70,7 +73,7 @@
             <div class="education-card section-card">
                 <h4>B.Tech in Computer Science and Engineering</h4>
                 <p>Aug, 2021 - June, 2025</p>
-                <p>Bengal Institute of Information Technology, Kolkata</p>
+                <p>Bengal Institute of Technology, Kolkata</p>
             </div>
             <div class="education-card section-card">
                 <h4>High School</h4>
